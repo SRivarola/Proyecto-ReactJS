@@ -18,8 +18,6 @@ export default function AdminProducto() {
         img: ''
     });
 
-    console.log(values.stock)
-
     async function handleFileChange(e) {
         const file = e.target.files[0];
 
@@ -66,9 +64,9 @@ export default function AdminProducto() {
             && (values.modelo !== '') 
             && (values.precio !== '') 
             && (values.descripcion !== '')
-            // && (values.stock[s] !== '')
-            // && (values.stock[m] !== '')
-            // && (values.stock[l] !== '')
+            && (values.stock['s'] !== '')
+            && (values.stock['m'] !== '')
+            && (values.stock['l'] !== '')
             && (values.img !== '')) {
            
             const collectionRef = collection(db, 'productos');
