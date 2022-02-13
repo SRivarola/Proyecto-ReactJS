@@ -14,9 +14,11 @@ export default function AdminProducto() {
         modelo: '', 
         precio: '', 
         descripcion: '', 
-        stock: {36: '', 37: '',38: '', 39: '', 40: '', 41: ''},
+        stock: {'s': '', 'm': '', 'l': ''},
         img: ''
     });
+
+    console.log(values.stock)
 
     async function handleFileChange(e) {
         const file = e.target.files[0];
@@ -64,12 +66,9 @@ export default function AdminProducto() {
             && (values.modelo !== '') 
             && (values.precio !== '') 
             && (values.descripcion !== '')
-            && (values.stock[36] !== '')
-            && (values.stock[37] !== '')
-            && (values.stock[38] !== '')
-            && (values.stock[39] !== '')
-            && (values.stock[40] !== '')
-            && (values.stock[41] !== '')
+            // && (values.stock[s] !== '')
+            // && (values.stock[m] !== '')
+            // && (values.stock[l] !== '')
             && (values.img !== '')) {
            
             const collectionRef = collection(db, 'productos');
@@ -81,12 +80,9 @@ export default function AdminProducto() {
                 description: values.descripcion,
                 model: values.modelo,
                 img: values.img,
-                stock:{ 36: Number(values.stock[36]),
-                        37: Number(values.stock[37]),
-                        38: Number(values.stock[38]),
-                        39: Number(values.stock[39]),
-                        40: Number(values.stock[40]),
-                        41: Number(values.stock[41]),
+                stock:{ s: Number(values.stock['s']),
+                        m: Number(values.stock['m']),
+                        l: Number(values.stock['l'])
                 }
             })
                 .finally(() => {
@@ -97,7 +93,7 @@ export default function AdminProducto() {
                 modelo: '', 
                 precio: '', 
                 descripcion: '', 
-                stock: {36: '', 37: '',38: '', 39: '', 40: '', 41: ''},
+                stock: {'s': '', 'm': '', 'l': ''},
                 img: ''
             })
             alert('Producto cargado')
@@ -129,9 +125,9 @@ export default function AdminProducto() {
                                     />
                                     <select onChange={handleSelectChange}>
                                         <option value='undefined'>Seleccionar modelo</option>
-                                        <option value='botineta'>Botineta</option>
-                                        <option value='media'>Media Caña</option>
-                                        <option value='alta'>Caña Alta</option>
+                                        <option value='enteriza'>Enteriza</option>
+                                        <option value='bikini'>Bikini</option>
+                                        <option value='infantil'>Infantil</option>
                                     </select>
                                     <input 
                                         className='form-control my-2'
@@ -160,10 +156,10 @@ export default function AdminProducto() {
                                 </div>
                                 <h4>Stock:</h4>
                                 <div className="input-group mb-3 stock">
-                                    <span className="input-group-text" id="inputGroup-sizing-default">36</span>
+                                    <span className="input-group-text" id="inputGroup-sizing-default">S</span>
                                     <input 
                                         onChange={ handleStockChange }
-                                        name='36'
+                                        name='s'
                                         type="text" 
                                         className="form-control" 
                                         aria-label="Sizing example input" 
@@ -171,10 +167,10 @@ export default function AdminProducto() {
                                     />
                                 </div>
                                 <div className="input-group mb-3 stock">
-                                    <span className="input-group-text" id="inputGroup-sizing-default">37</span>
+                                    <span className="input-group-text" id="inputGroup-sizing-default">M</span>
                                     <input 
                                         onChange={ handleStockChange }
-                                        name='37'
+                                        name='m'
                                         type="text" 
                                         className="form-control" 
                                         aria-label="Sizing example input" 
@@ -182,42 +178,10 @@ export default function AdminProducto() {
                                         />
                                 </div>
                                 <div className="input-group mb-3 stock">
-                                    <span className="input-group-text" id="inputGroup-sizing-default">38</span>
+                                    <span className="input-group-text" id="inputGroup-sizing-default">L</span>
                                     <input
                                         onChange={ handleStockChange }
-                                        name='38' 
-                                        type="text" 
-                                        className="form-control" 
-                                        aria-label="Sizing example input" 
-                                        aria-describedby="inputGroup-sizing-default"
-                                    />
-                                </div>
-                                <div className="input-group mb-3 stock">
-                                    <span className="input-group-text" id="inputGroup-sizing-default">39</span>
-                                    <input
-                                        onChange={ handleStockChange }
-                                        name='39' 
-                                        type="text" 
-                                        className="form-control" 
-                                        aria-label="Sizing example input" 
-                                        aria-describedby="inputGroup-sizing-default"
-                                        />
-                                </div>
-                                <div className="input-group mb-3 stock">
-                                    <span className="input-group-text" id="inputGroup-sizing-default">40</span>
-                                    <input
-                                        onChange={ handleStockChange }
-                                        name='40' 
-                                        type="text" 
-                                        className="form-control" 
-                                        aria-label="Sizing example input" 
-                                        aria-describedby="inputGroup-sizing-default"/>
-                                </div>
-                                <div className="input-group mb-3 stock">
-                                    <span className="input-group-text" id="inputGroup-sizing-default">41</span>
-                                    <input
-                                        onChange={ handleStockChange }
-                                        name='41' 
+                                        name='l' 
                                         type="text" 
                                         className="form-control" 
                                         aria-label="Sizing example input" 
