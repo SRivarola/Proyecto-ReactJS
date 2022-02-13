@@ -16,4 +16,4 @@ pass: 123456
 
 ## Para visualizar la app se puede entrar a este link
 
-https://etana-buenosaires.netlify.app/
+https://summervibes.netlify.app/
