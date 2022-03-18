@@ -10,7 +10,7 @@ Es una aplicacion como proyecto de estudio, no es un e-commerce real, aunque a l
 
 ## Datos para ADMINISTRADOR
 
-usuario: etana@buenosaires.com
+usuario: summer@vibes.com
 pass: 123456
 
 

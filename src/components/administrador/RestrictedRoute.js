@@ -9,7 +9,7 @@ const RestrictedRoute = ({children}) => {
     if(!logged){
         return <Navigate to = '/'/>
     }
-    return user.email === "etana@buenosaires.com" ? children : <Navigate to = '/'/>
+    return user.email === "summer@vibes.com" ? children : <Navigate to = '/'/>
 
 }
 
